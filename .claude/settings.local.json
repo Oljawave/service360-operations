@@ -18,7 +18,8 @@
       "Bash(robocopy:*)",
       "Bash(powershell -Command \"Remove-Item -Recurse -Force ../service360-operations\")",
       "Bash(Select-Object -First 5)",
-      "Bash(test:*)"
+      "Bash(test:*)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []

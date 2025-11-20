@@ -89,12 +89,12 @@ const allPerformers = ref([]); // Полный список исполнител
 // Уникальные участки из загруженных исполнителей
 const locationOptions = computed(() => {
   const uniqueLocations = new Map();
-  
+
   allPerformers.value.forEach(performer => {
-    // Используем pvLocation как ключ для уникальности и как значение
-    if (performer.pvLocation && performer.nameLocation) {
-      uniqueLocations.set(performer.pvLocation, {
-        value: performer.pvLocation,
+    // Используем objLocation как ключ для уникальности и как значение
+    if (performer.objLocation && performer.nameLocation) {
+      uniqueLocations.set(performer.objLocation, {
+        value: performer.objLocation,
         label: performer.nameLocation
       });
     }
@@ -105,13 +105,13 @@ const locationOptions = computed(() => {
 
 // Отфильтрованные исполнители по выбранному участку
 const filteredPerformers = computed(() => {
-  const locationValue = selectedLocation.value?.value; 
+  const locationValue = selectedLocation.value?.value;
   if (!locationValue) {
     return [];
   }
 
   return allPerformers.value.filter(
-    performer => performer.pvLocation === locationValue
+    performer => performer.objLocation === locationValue
   );
 });
 

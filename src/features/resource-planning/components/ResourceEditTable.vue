@@ -41,7 +41,7 @@
               <td>{{ getNameLabel(row.name) }}</td>
 
               <!-- Обычные ресурсы (материалы, услуги): Ед. изм., План, Факт, Действия -->
-              <td v-if="!isPerformer && !isTool && !isEquipment">{{ row.unit || 'ед.' }}</td>
+              <td v-if="!isPerformer && !isTool && !isEquipment">{{ row.unit_text || row.unit || 'ед.' }}</td>
               <td v-if="!isPerformer && !isTool && !isEquipment">{{ row.plan }}</td>
               <td v-if="!isPerformer && !isTool && !isEquipment" class="fact-input-cell">
                 <AppNumberInput
@@ -498,6 +498,7 @@ const initializeExistingRows = (rows) => {
       id: row.id,
       name: row.name,
       unit: row.unit,
+      unit_text: row.unit_text,
       plan: row.plan,
       fact: row.fact,
       idValue: row.idValue,
